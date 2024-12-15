@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --primary-color: #4285f4;
+  --secondary-color: #34a853;
+  --accent-color: #fbbc05;
+  --background-color: #f9f9f9;
+  --text-color: #202124;
+  --card-bg-color: #ffffff;
+  --transition: all 0.3s ease-in-out;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+.events{
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.header h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.main {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: slideInLeft 1s ease-in-out;
+}
+
+.main h2 {
+  font-size: 2.5rem;
+}
+
+.maincontent p {
+  margin: 10px 0;
+}
+
+.past{
+  background: var(--card-bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.past h3 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.past ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  gap: 10px;
+}
+
+.past li {
+  background: var(--background-color);
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.advertisement {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.advertisement h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.advertisement p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.adimage {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px 0;
+  margin-bottom: 30px;
+}
+
+.card {
+  flex: 0 0 200px;
+  background: var(--card-bg-color);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card.active {
+  border: 2px solid var(--primary-color);
+  transform: scale(1.05);
+}
+
+.registration {
+  background: var(--card-bg-color);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: slideInUp 1.5s ease-in-out;
+}
+
+.registration h3 {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+.registration form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.registration input,
+.registration select,
+.registration button {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.registration input:focus,
+.registration select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(66, 133, 244, 0.5);
+  outline: none;
+}
+
+.registration button {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.registration button:hover {
+  background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.navlink{
+  text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    position: relative;
+    
+    &:hover {
+        color: #61dafb;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #61dafb;
+        transition: width 0.3s;
+        position: absolute;
+        left: 50%;
+        bottom: -5px;
+        transform: translateX(-50%);
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+h1{
+  font-weight: 900;
+}
