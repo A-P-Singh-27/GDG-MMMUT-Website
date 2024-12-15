@@ -3,7 +3,9 @@ import {
     Dialog,
     DialogContent,
     DialogTrigger,
-} from "@/components/ui/dialog.jsx"
+} from '../Components/ui/dialog';
+
+
 
 function Contact() {
     return (

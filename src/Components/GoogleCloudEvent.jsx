@@ -1,12 +1,12 @@
 import React from 'react'
-import { Card, CardContent } from "@/components/ui/card.jsx"
+import { Card, CardContent } from "@/Components/ui/card.jsx"
 import {
     Carousel,
     CarouselContent,
     CarouselItem,
     CarouselNext,
     CarouselPrevious,
-} from "@/components/ui/carousel.jsx"
+} from "@/Components/ui/carousel.jsx"
 
 
 function GoogleCloudEvent() {

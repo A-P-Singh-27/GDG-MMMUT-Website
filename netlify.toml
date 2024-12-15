@@ -1,0 +1,13 @@
+[build]
+  command = "node list-files.js && npm run build"
+  publish = "dist"
+  base = "/"
+
+[dev]
+  command = "vite"
+  port = 3000
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
