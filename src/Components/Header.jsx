@@ -14,7 +14,7 @@ function Header() {
                 </div>
                 <div className='flex gap-7 text-2xl'>
                     <li>
-                        <Link to={'/'}><h2>Home</h2></Link>
+                        <Link to={'/'}><h2 className="text-3xl bg-red-600">Home</h2></Link>
                     </li>
                     <Link to={'/team'}><li>Team</li></Link>
                     <li>Events</li>
