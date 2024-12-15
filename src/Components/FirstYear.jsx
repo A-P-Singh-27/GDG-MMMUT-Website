@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaQuestion } from "react-icons/fa";
-import { Button } from "@/components/ui/button.jsx"
+import { Button } from "@/Components/ui/button.jsx"
 import {
     Drawer,
     DrawerClose,
@@ -10,7 +10,7 @@ import {
     DrawerHeader,
     DrawerTitle,
     DrawerTrigger,
-} from "@/components/ui/drawer"
+} from "@/Components/ui/drawer"
 import RecruitmentHead from './../utils/recruitmenthead.jsx';
 
 

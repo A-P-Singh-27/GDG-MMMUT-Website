@@ -1,7 +1,7 @@
 import * as React from "react"
-
 import { cn } from "@/lib/utils"
 
+// Card Component
 const Card = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
@@ -10,6 +10,7 @@ const Card = React.forwardRef(({ className, ...props }, ref) => (
 ))
 Card.displayName = "Card"
 
+// CardHeader Component
 const CardHeader = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
@@ -18,15 +19,18 @@ const CardHeader = React.forwardRef(({ className, ...props }, ref) => (
 ))
 CardHeader.displayName = "CardHeader"
 
+// CardTitle Component
 const CardTitle = React.forwardRef(({ className, ...props }, ref) => (
-  <div
+  <h3
     ref={ref}
     className={cn("font-semibold leading-none tracking-tight", className)}
     {...props} />
 ))
 CardTitle.displayName = "CardTitle"
 
+// CardDescription Component
 const CardDescription = React.forwardRef(({ className, ...props }, ref) => (
+  // Use a <div> instead of <p> to avoid any potential nested <p> tags
   <div
     ref={ref}
     className={cn("text-sm text-muted-foreground", className)}
@@ -34,11 +38,13 @@ const CardDescription = React.forwardRef(({ className, ...props }, ref) => (
 ))
 CardDescription.displayName = "CardDescription"
 
+// CardContent Component
 const CardContent = React.forwardRef(({ className, ...props }, ref) => (
   <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
 ))
 CardContent.displayName = "CardContent"
 
+// CardFooter Component
 const CardFooter = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
