@@ -10,7 +10,7 @@ import {
     DrawerHeader,
     DrawerTitle,
     DrawerTrigger,
-} from "@/components/ui/drawer"
+} from "@/Components/ui/drawer"
 import RecruitmentHead from './../utils/recruitmenthead.jsx';
 
 
