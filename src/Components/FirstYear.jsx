@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaQuestion } from "react-icons/fa";
-import { Button } from "@/components/ui/button.jsx"
+import { Button } from "@/Components/ui/button.jsx"
 import {
     Drawer,
     DrawerClose,
