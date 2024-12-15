@@ -1,5 +1,5 @@
 import React from 'react'
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar.jsx"
+import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar.jsx"
 
 
 export default function Advisor() {
