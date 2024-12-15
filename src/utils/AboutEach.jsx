@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/Components/ui/button"
 import { FaQuestion } from "react-icons/fa";
 import {
     Drawer,
@@ -13,7 +13,7 @@ import {
     DrawerHeader,
     DrawerTitle,
     DrawerTrigger,
-} from "@/components/ui/drawer"
+} from "@/Components/ui/drawer"
 
 
 
