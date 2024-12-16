@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --google-blue: #4285f4;
+  --google-red: #ea4335;
+  --google-yellow: #fbbc05;
+  --google-green: #34a853;
+  --background-light: #f9f9f9;
+  --text-dark: #202124;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+}
+.eventupper{
+  background:linear-gradient(90deg,#FFFFFF,#3b0ade23);
+}
+.events {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 3rem;
+  color: var(--google-blue);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  opacity: 0.8;
+}
+
+.main{
+  background: linear-gradient(45deg, var(--google-blue), var(--google-green));
+  color: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: slideInLeft 1s ease-in-out;
+}
+
+.main h2 {
+  font-size: 2.5rem;
+}
+
+.maincontent p {
+  margin: 10px 0;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.card {
+  min-width: 200px;
+  padding: 15px;
+  text-align: center;
+  background: white;
+  border: 2px solid var(--google-yellow);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, background-color 0.3s;
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.event-card.active {
+  border-color: var(--google-green);
+  background-color: #e8f0fe;
+  transform: scale(1.1);
+}
+
+.registration {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: slideInUp 1s ease-in-out;
+}
+
+.registration h3 {
+  margin-bottom: 15px;
+  color: var(--google-red);
+}
+
+.registration form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.registration input,
+.registration select,
+.registration button {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--google-blue);
+}
+
+.registration input:focus,
+.registration select:focus {
+  border-color: var(--google-red);
+  outline: none;
+  box-shadow: 0 0 5px rgba(234, 67, 53, 0.5);
+}
+
+.registration button {
+  background: linear-gradient(90deg, var(--google-blue), var(--google-green));
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.registration button:hover {
+  background: linear-gradient(90deg, var(--google-red), var(--google-yellow));
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

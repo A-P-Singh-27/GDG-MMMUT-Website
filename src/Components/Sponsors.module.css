@@ -1,0 +1,59 @@
+.sponsors-section {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .sponsors-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .sponsors-description {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+  }
+  
+  .sponsors-tier {
+    margin-bottom: 30px;
+  }
+  
+  .tier-title {
+    font-size: 1.5rem;
+    color: #444;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .sponsors-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sponsors-list li {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 5px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .sponsors-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #888;
+    font-size: 1.5rem;
+    line-height: 1.1;
+  }
+  

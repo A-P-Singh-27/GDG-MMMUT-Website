@@ -8,6 +8,7 @@ import About from '@/Components/About.jsx';
 import Footer from '../Components/Footer.jsx';
 //import Separator from "@/components/ui/separator.jsx"
 import Sponser from './../Components/Sponsers.jsx';
+import { Navbar } from '@/stylings/Navbar.jsx';
 
 
 
