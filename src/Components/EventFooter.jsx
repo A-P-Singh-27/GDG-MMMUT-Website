@@ -4,12 +4,21 @@ import { FaInstagram } from "react-icons/fa";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaDiscord } from "react-icons/fa6";
+import gdgLogo from './../assets/GdgLogo.svg';
+
 
 
 
 function EventFooter() {
     return (
         <footer className="bg-white text-lg w-full p-5">
+                <div className="block text-teal-600">
+                                            <img src={gdgLogo} alt="" className='h-[4rem] w-[7rem] inline mb-1' />
+                                            <span className='text-[#DB4437] text-xl'>G</span>
+                                            <span className='text-[#0F9D58] text-xl'>D</span>
+                                            <span className='text-[#F4B400] text-xl'>G</span>
+                                            <span className='text-[#4285F4] text-xl'>-MMMUT</span>
+                                        </div>
 
                     <div className="flex flex-col gap-8">
 
@@ -72,7 +81,7 @@ function EventFooter() {
                                 </ul>
                             </div>
                         </div>
-                        <div className='text-black flex gap-5 ml-44 '>
+                        <div className='text-black flex gap-5 '>
                             <span className='text-2xl'><IoLogoLinkedin /></span>
                             <span className='text-2xl'><FaInstagram /></span>
                             <span className='text-2xl'><AiOutlineWhatsApp /></span>

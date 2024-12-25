@@ -15,13 +15,19 @@ function Sponsers() {
       style={{ backgroundImage: `url(${sponserbg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
         
-         <ul className='flex gap-8 relative'>
-                <li className='absolute top-[8rem] left-[50%]'><img src={google} alt="" className='w-[11rem] h-[8rem] rounded-full'/></li>
-                <li className='absolute top-[2.5rem] left-[30%]'><img src={adobe} alt="" className='w-[8rem] h-[8rem] rounded-r-full'/></li>
-                <li className='absolute top-[9rem] left-[10%]'><img src={amazon} alt="" className='w-[5rem] h-[4rem] rounded-xl rounded-r-full'/></li>
-                <li className='absolute top-[14rem] right-[1rem]'><img src={bombora} alt="" className='w-[5rem] h-[4rem]'/></li>
-                <li className='absolute top-[9rem] right-[25%]'><img src={deloitte} alt="" className='w-[8rem] h-[4rem] rounded-r-full'/></li>
-                <li className='absolute top-[1rem] right-[1rem]'><img src={flexport} alt="" className='w-[5rem] h-[4rem] rounded-xl rounded-l-full'/></li>
+         <ul className='flex gap-8 flex-wrap lg:relative'>
+                <div className='flex flex-wrap justify-around w-[50rem]'>
+                <li className='lg:absolute lg:top-[8rem] lg:left-[50%]'><img src={google} alt="" className='w-[11rem] h-[8rem] rounded-full'/></li>
+                <li className='lg:absolute lg:top-[2.5rem] lg:left-[30%]'><img src={adobe} alt="" className='w-[8rem] h-[8rem] rounded-r-full'/></li>
+                </div>
+                <div className='flex flex-wrap justify-around w-[50rem]'>
+                <li className='lg:absolute lg:top-[9rem] lg:left-[10%]'><img src={amazon} alt="" className='w-[5rem] h-[4rem] rounded-xl rounded-r-full'/></li>
+                <li className='lg:absolute lg:top-[14rem] lg:right-[1rem]'><img src={bombora} alt="" className='w-[5rem] h-[4rem]'/></li>
+                </div>
+                <div className='flex flex-wrap justify-around w-[50rem]'>
+                <li className='lg:absolute lg:top-[9rem] lg:right-[25%]'><img src={deloitte} alt="" className='w-[8rem] h-[4rem] rounded-r-full'/></li>
+                <li className='lg:absolute lg:top-[1rem] lg:right-[1rem]'><img src={flexport} alt="" className='w-[5rem] h-[4rem] rounded-xl rounded-l-full'/></li>
+                </div>
                 </ul>
 
     </div>

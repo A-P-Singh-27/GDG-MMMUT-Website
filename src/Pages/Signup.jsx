@@ -1,11 +1,112 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import gdgLogo from './../assets/GdgLogo.svg';
-// import signupphoto from './../assets/signupphoto.svg';
-import { Link } from 'react-router-dom';
-import { Login } from '@/utils/login';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import Logo from '@/Components/Logo';
 
 
 function Signup() {
+
+    const [formData, setFormData] = useState({
+        firstname: "",
+        lastname: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+    });
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+    const [email, setEmail] = useState("");
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        console.log(email);
+
+    }, [email])
+
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const emailParam = params.get('email');
+        if (emailParam) {
+            setEmail(emailParam);
+            setFormData({ ...formData, email: emailParam });
+        }
+    }, [location.search]);
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError("");
+        setSuccess("");
+        console.log(formData);
+
+        try {
+            const response = await fetch("http://localhost:4000/api/v1/signup", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+            console.log('data = ', data.token);
+
+
+            if (response.ok) {
+                toast.success("Signup successful!")
+                const params = new URLSearchParams(location.search);
+                const email = params.get('email');
+                const feedback = params.get('feedback');
+                if (feedback) {
+                    try {
+                        const response = await fetch(`http://localhost:4000/api/v1/saveFeedback`, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({ email: email, feedback: feedback }),
+                        });
+                        console.log('response', response);
+
+                        if (response.ok) {
+                            toast.success("Feedback saved successfully!");
+                        } else {
+                            toast.error("Failed to save feedback.");
+                        }
+                    } catch (err) {
+                        console.error("Error saving feedback:", err);
+                        toast.error("An error occurred. Please try again later.");
+                    }
+                }
+                setSuccess(data.message);
+                if (data.token) {
+                    localStorage.setItem("token", data.token);
+                    // setIsLoggedIn(true);  // Update the login state
+                    setTimeout(() => navigate("/"));
+                }
+                // setTimeout(() => navigate("/"), 3000); 
+            } else if (response.status === 409) {
+                // User already exists, redirect to login pages
+                toast.error(data.message || "User already registered. Please login.");
+                setError(data.message || "User already registered. Please login.");
+                setEmail(formData.email);
+                setTimeout(() => navigate(`/login?email=${encodeURIComponent(formData.email)}`), 1000); // Redirect to login after error message
+            } else {
+                toast.error(data.message || "Signup failed. Please try again.");
+                setError(data.message || "Signup failed. Please try again."); // Handle error messages from API
+            }
+        } catch (err) {
+            toast.error("Network error. Please try again.");
+            setError("Network error. Please try again."); // Handle network errors
+        }
+
+    }
+
     return (
         <section className="bg-white" >
             <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
@@ -59,9 +160,10 @@ function Signup() {
                                 quibusdam aperiam voluptatum.
                             </p>
                         </div>
-                        <div>
-                            <img src={gdgLogo} className='justify-self-center' alt="" />
-                            <div className="block justify-self-center absolute left-[20rem] bottom-[15rem] text-teal-600 lg:hidden ">
+                        <div className='flex flex-col justify-center items-center gap-4'>
+                            {/* <img src={gdgLogo} className='justify-self-center' alt="" /> */}
+                            <img src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-dsc/events/small-logo.png" alt='' width="45rem" />
+                            <div className="block justify-self-center text-teal-600 lg:hidden ">
                                 <span className='text-[#DB4437] text-xl'>G</span>
                                 <span className='text-[#0F9D58] text-xl'>D</span>
                                 <span className='text-[#F4B400] text-xl'>G</span>
@@ -69,7 +171,10 @@ function Signup() {
                             </div>
                         </div>
 
-                        <form action="#" className="mt-8 grid grid-cols-6 gap-6">
+                        <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-6">
+                            {error && <p className="col-span-6 text-sm text-red-500">{error}</p>}
+                            {success && <p className="col-span-6 text-sm text-green-500">{success}</p>}
+
                             <div className="col-span-6 sm:col-span-3">
                                 <label htmlFor="FirstName" className="block text-sm font-medium text-gray-700">
                                     First Name
@@ -78,7 +183,10 @@ function Signup() {
                                 <input
                                     type="text"
                                     id="FirstName"
-                                    name="first_name"
+                                    name="firstname"
+                                    value={formData.firstname}
+                                    onChange={handleChange}
+                                    required
                                     className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                 />
                             </div>
@@ -91,7 +199,10 @@ function Signup() {
                                 <input
                                     type="text"
                                     id="LastName"
-                                    name="last_name"
+                                    name="lastname"
+                                    value={formData.lastname}
+                                    onChange={handleChange}
+                                    required
                                     className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                 />
                             </div>
@@ -103,6 +214,9 @@ function Signup() {
                                     type="email"
                                     id="Email"
                                     name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
                                     className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                 />
                             </div>
@@ -114,6 +228,9 @@ function Signup() {
                                     type="password"
                                     id="Password"
                                     name="password"
+                                    value={formData.password}
+                                    onChange={handleChange}
+                                    required
                                     className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                 />
                             </div>
@@ -126,7 +243,10 @@ function Signup() {
                                 <input
                                     type="password"
                                     id="PasswordConfirmation"
-                                    name="password_confirmation"
+                                    name="confirmPassword"
+                                    value={formData.confirmPassword}
+                                    onChange={handleChange}
+                                    required
                                     className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                 />
                             </div>
@@ -156,16 +276,20 @@ function Signup() {
                             </div>
 
                             <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-                            <Link to={'/'}>
                                 <button
+                                    type='submit'
                                     className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
                                 >
                                     Create an account
-                                </button></Link>
+                                </button>
 
                                 <p className="mt-4 text-sm text-gray-500 sm:mt-0">
                                     Already have an account?&nbsp;
-                                    <Login/>.
+                                    <Link to={"/login"}>
+                                        <button className='p-2 border m-2 rounded-md bg-blue-400 text-teal-50'>
+                                            Login
+                                        </button>
+                                    </Link>
                                 </p>
                             </div>
                         </form>

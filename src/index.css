@@ -12,7 +12,7 @@
     @apply text-neutral-50;
     @apply bg-neutral-800;
   }
-
+  
 :root {
   --background: 0 0% 100%;
   --foreground: 240 10% 3.9%;

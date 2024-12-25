@@ -89,13 +89,15 @@ function AllLeads() {
 
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-screen-xl p-4 sm:px-6 lg:px-8 ">
+      <div className="mx-auto p-4 sm:px-6 sm:py-4 lg:px-8 lg:py-6">
+
         <h2 className="text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-2xl">
           Team Leader of Different Domain
         </h2>
 
         <div className="mt-8">
-          <div ref={keenSliderRef} className="keen-slider flex gap-4 overflow-hidden h-[25rem]">
+          {/* <div ref={keenSliderRef} className="keen-slider flex gap-4 overflow-hidden h-[fit] sm:h-[25rem]"> */}
+          <div ref={keenSliderRef} className="keen-slider flex gap-4 overflow-hidden h-fit md:h-[20rem]">
             {slidesData.map((slide, index) => (
               <div key={index} className="keen-slider__slide opacity-40 transition-opacity duration-500 w-[300px]">
                 <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">

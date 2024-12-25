@@ -10,11 +10,11 @@ import {
 
 function RecentWinner() {
     return (
-        <div>
-            <h1 className="text-4xl font-bold justify-self-center my-4">
+        <div className="w-full p-4 flex flex-col items-center justify-center">
+            <h1 className="font-bold justify-self-center my-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                 Our Recent Winners
             </h1>
-            <div className="relative w-full h-fit bg-gray-50">
+            <div className="relative w-full h-fit bg-gray-50 px-5">
                 {/* Carousel Wrapper */}
                 <Carousel
                     opts={{

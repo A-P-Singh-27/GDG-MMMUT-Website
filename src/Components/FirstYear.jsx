@@ -12,9 +12,14 @@ import {
     DrawerTrigger,
 } from "@/Components/ui/drawer"
 import RecruitmentHead from './../utils/recruitmenthead.jsx';
+import { Link } from 'react-router-dom';
 
 
 function FirstYear() {
+    // const handlenotification = () => {
+        
+    // }
+
     return (
         <div className='flex flex-col justify-center items-center'>
             <RecruitmentHead />
@@ -35,9 +40,9 @@ function FirstYear() {
                         <div >
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae similique magni fugit eos, porro sapiente et quas id quae, qui illum. Beatae eligendi eos corrupti maiores, eius vitae. Reprehenderit odio aperiam mollitia. Assumenda commodi error dolor dignissimos. Tenetur, consequuntur soluta asperiores doloremque recusandae, dolores molestiae nobis quam esse repellendus quod possimus culpa blanditiis minima sit, dolorum voluptas est! Error reiciendis molestiae natus accusamus modi vitae, laudantium excepturi eum ut consequatur qui velit, laborum quasi architecto a ea officiis non distinctio consequuntur quis sit! Incidunt commodi tenetur libero vero voluptatem, rem culpa? Quasi natus nesciunt vel architecto debitis autem, quaerat enim.
                         </div>
-                        <div className='flex flex-col'>
-                            <h1 className='text-xl text-[#DB4437] justify-self-center'>Application not Started Yet</h1>
-                            <Button variant="outline" className='text-[#DB4437] bg-red-50 '>Notify me !</Button>
+                        <div className='flex flex-col w-full items-center'>
+                            <h1 className='text-xl text-[#DB4437]'>Application not Started Yet</h1>
+                            <Link className='w-[100%] flex justify-center items-center' to='https://forms.gle/MdgjU2EUsjeHtjqC6' ><Button variant="outline" className='text-[#DB4437] justify-self-center bg-red-50 '>Notify me !</Button></Link>
                         </div>
 
                         <DrawerFooter>

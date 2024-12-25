@@ -48,14 +48,17 @@ const FormerLeads = () => {
       <h2 className="text-2xl font-semibold text-gray-900 sm:text-3xl mb-6">Former GDG Leads</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {formerLeads.map((lead, index) => (
-          <div key={index} className="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div key={index} style={{
+            background: 'radial-gradient(circle, rgba(237,230,219,1) 0%, rgba(234,216,216,1) 35%, rgba(232,233,218,1) 100%)',
+          }}  className="group p-4 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 ease-in-out overflow-hidden"
+>
             <img 
               src={lead.image} 
               alt={lead.name} 
-              className="rounded-full w-32 h-32 object-cover mx-auto"
+              className="rounded-full w-32 h-32 object-cover mx-auto transform group-hover:rounded-xl group-hover:scale-110 transition-all duration-500 ease-out"
             />
-            <h3 className="text-xl text-center font-medium text-white mt-4">{lead.name}</h3>
-            <p className="text-sm text-gray-300 text-center mt-2">{lead.description}</p>
+            <h3 className="text-xl text-center font-medium text-black mt-4">{lead.name}</h3>
+            <p className="text-sm text-black text-center mt-2">{lead.description}</p>
           </div>
         ))}
       </div>

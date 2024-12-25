@@ -9,6 +9,8 @@ import Events from './Pages/Events'
 import Registration from './Components/Registration'
 import Contact from './Pages/Contact'
 import Blogs from './Pages/Blogs'
+import { Login } from './utils/login'
+import { ToastContainer} from 'react-toastify';
 // import Profile from './Profile'
 
 ///yha par is function mai sare routes ha jo ek array of object mai save h...
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: '/signup',
     element: <Signup/>
+  },
+  {
+    path: '/login',
+    element: <Login/>
   },
   {
 path:'/events',
@@ -52,5 +58,6 @@ element:<Events/>
 createRoot(document.getElementById('root')).render(
   <StrictMode>
           <RouterProvider router={router} />
+          <ToastContainer autoClose = {2000} position = 'bottom-right'/>
   </StrictMode>,
 )

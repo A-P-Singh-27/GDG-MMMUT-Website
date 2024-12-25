@@ -9,6 +9,7 @@ import Footer from '../Components/Footer.jsx';
 //import Separator from "@/components/ui/separator.jsx"
 import Sponser from './../Components/Sponsers.jsx';
 import { Navbar } from '@/stylings/Navbar.jsx';
+import BottomTabBar from '@/Components/BottomTabBar.jsx';
 
 
 
@@ -18,27 +19,31 @@ function Home() {
     <div>
       <div className='bg-[url({gdglogo})]'>
         {/* Header navbar */}
-        <Header />
+        <div className="hidden sm:block">
+          <Header className="hidden sm:block"/>
+        </div>
+        {/* mobile tabbar */}
+          <BottomTabBar/>
         {/* content Heading */}
         <Content />
         {/* Recent Winner */}
-        <RecentWinner/>
-        <hr className='border-4'/>
+        <RecentWinner />
+        <hr className='border-4' />
         {/* cloud events */}
-        <GoogleCloudEvent/>
+        <GoogleCloudEvent />
         {/* lead and faculty advicer */}
-        <Leads/>
+        <Leads />
         {/* about */}
-        <About/>
-        <hr/>
+        <About />
+        <hr />
         {/* Sponsers */}
         <h1 className='text-4xl m-5 justify-self-center font-bold'>
-        <span className='text-[#0F9D58] '>Our</span>
-        <span className='text-[#F4B400] '>&nbsp;Sponsers</span>
+          <span className='text-[#0F9D58] '>Our</span>
+          <span className='text-[#F4B400] '>&nbsp;Sponsers</span>
         </h1>
-        <Sponser/>
+        <Sponser />
         {/* Footer */}
-        <Footer/>
+        <Footer />
       </div>
     </div>
   )

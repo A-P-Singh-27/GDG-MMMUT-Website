@@ -66,7 +66,9 @@ export function AdvisorBrief( {flex}) {
         //             </div>
         //         </div>
         //     </div>
-        <article className="relative rounded-xl border border-gray-700 bg-gray-800 p-4 overflow-hidden group">
+        <article style={{
+          background: 'radial-gradient(circle, rgba(237,230,219,1) 0%, rgba(234,216,216,1) 35%, rgba(232,233,218,1) 100%)',
+        }} className="relative rounded-xl border border-gray-700 p-4 overflow-hidden group">
   <div className="flex items-center gap-4">
     <img
       alt=""
@@ -75,20 +77,20 @@ export function AdvisorBrief( {flex}) {
     />
 
     <div>
-      <h3 className="text-lg font-medium text-white">Claire Mac</h3>
+      <h3 className="text-lg font-medium text-black">Claire Mac</h3>
 
       <div className="flow-root">
         <ul className="-m-1 flex flex-wrap">
           <li className="p-1 leading-none">
-            <a href="#" className="text-xs font-medium text-gray-300"> Twitter </a>
+            <a href="#" className="text-xs font-medium text-black"> Twitter </a>
           </li>
 
           <li className="p-1 leading-none">
-            <a href="#" className="text-xs font-medium text-gray-300"> GitHub </a>
+            <a href="#" className="text-xs font-medium text-black"> GitHub </a>
           </li>
 
           <li className="p-1 leading-none">
-            <a href="#" className="text-xs font-medium text-gray-300"> LinkedIn </a>
+            <a href="#" className="text-xs font-medium text-black"> LinkedIn </a>
           </li>
         </ul>
       </div>
@@ -100,21 +102,23 @@ export function AdvisorBrief( {flex}) {
     <img
       src="https://images.unsplash.com/photo-1614644147724-2d4785d69962?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"
       alt="Project Image"
-      className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+      className="absolute inset-0 h-full w-full object-cover transition-opacity ease-in-out duration-300 group-hover:opacity-0"
     />
 
     {/* Text Layer */}
-    <div className="absolute inset-0 flex flex-col justify-center p-4 bg-gray-800 bg-opacity-80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-      <p className="text-xs font-medium text-gray-300">
+    <div style={{
+          background: 'radial-gradient(circle, rgba(237,230,219,1) 0%, rgba(234,216,216,1) 35%, rgba(232,233,218,1) 100%)',
+        }} className="absolute inset-0 flex flex-col justify-center p-4 bg-opacity-80 opacity-0 transition-opacity ease-in-out duration-300 group-hover:opacity-100">
+      <p className="text-xs font-medium text-black">
         The GDG Faculty Advisor mentors and supports the group, bridging university goals with GDG activities.
       </p>
-      <p className="mt-2 text-xs font-medium text-gray-300">
+      <p className="mt-2 text-xs font-medium text-black">
         Their leadership ensures the chapter thrives as a hub for technical growth and community engagement.
       </p>
-      <p className="mt-2 text-xs font-medium text-gray-300">
+      <p className="mt-2 text-xs font-medium text-black">
         Their leadership ensures the chapter thrives as a hub for technical growth and community engagement.
       </p>
-      <p className="mt-2 text-xs font-medium text-gray-300">
+      <p className="mt-2 text-xs font-medium text-black">
         Their leadership ensures the chapter thrives as a hub for technical growth and community engagement.
       </p>
     </div>

@@ -20,7 +20,7 @@ function About() {
                                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur dolores asperiores, officia cupiditate enim ex similique sit recusandae accusamus laboriosam?
                                 </p>
                             </div>
-                            <div>
+                            <div flex justify-around items-center md:grid-cols-3 md:items-center md:gap-8>
                             <DrawerDemo label={"What"} color={"#DB4437"}/>
                             <DrawerDemo label={"Why"} color={"#F4B400"}/>
                             <DrawerDemo label={"How"} color={"#E37400"}/>
@@ -30,7 +30,7 @@ function About() {
                             <div>
                             <img
                                 src={AboutImage}
-                                className="rounded  pt-6 h-[18rem] w-[50rem] mt-[4rem]"
+                                className="rounded  pt-6 h-[18rem] w-[50rem] mt-[4rem] hidden sm:block"
                                 alt=""
                             />
                             </div>
