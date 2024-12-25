@@ -15,7 +15,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuShortcut,
 } from "./ui/dropdown-menu.jsx"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar"
 import { jwtDecode } from 'jwt-decode';
 
 function BottomTabBar() {
