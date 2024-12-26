@@ -187,7 +187,7 @@ function Signup() {
                                     value={formData.firstname}
                                     onChange={handleChange}
                                     required
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm border-2 h-8"
                                 />
                             </div>
 
@@ -203,7 +203,7 @@ function Signup() {
                                     value={formData.lastname}
                                     onChange={handleChange}
                                     required
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm border-2 h-8"
                                 />
                             </div>
 
@@ -217,7 +217,7 @@ function Signup() {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm border-2 h-8"
                                 />
                             </div>
 
@@ -231,7 +231,7 @@ function Signup() {
                                     value={formData.password}
                                     onChange={handleChange}
                                     required
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm border-2"
                                 />
                             </div>
 
@@ -247,7 +247,7 @@ function Signup() {
                                     value={formData.confirmPassword}
                                     onChange={handleChange}
                                     required
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm border-2"
                                 />
                             </div>
 
