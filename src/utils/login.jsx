@@ -46,7 +46,7 @@ export function Login() {
     setError(""); // Clear any previous error
 
     try {
-      const response = await fetch("http://localhost:4000/api/v1/login", {
+      const response = await fetch("https://gdg-mmmut.vercel.app/api/v1/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +65,7 @@ export function Login() {
         const feedback = params.get('feedback');
         if (feedback) {
           try {
-            const response = await fetch(`http://localhost:4000/api/v1/saveFeedback`, {
+            const response = await fetch(`https://gdg-mmmut.vercel.app/api/v1/saveFeedback`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

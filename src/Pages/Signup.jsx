@@ -45,7 +45,7 @@ function Signup() {
         console.log(formData);
 
         try {
-            const response = await fetch("http://localhost:4000/api/v1/signup", {
+            const response = await fetch("https://gdg-mmmut.vercel.app/api/v1/signup", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -64,7 +64,7 @@ function Signup() {
                 const feedback = params.get('feedback');
                 if (feedback) {
                     try {
-                        const response = await fetch(`http://localhost:4000/api/v1/saveFeedback`, {
+                        const response = await fetch(`https://gdg-mmmut.vercel.app/api/v1/saveFeedback`, {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",

@@ -27,7 +27,7 @@ function BottomTabBar() {
       console.log('Token from localStorage:', token); // Log token to check if it's there
   
       if (token) {
-        fetch("http://localhost:4000/api/v1/verifyToken", {
+        fetch("https://gdg-mmmut.vercel.appapi/v1/verifyToken", {
           method: "GET",
           headers: {
             "Authorization": `Bearer ${token}`,
@@ -89,7 +89,7 @@ function BottomTabBar() {
       
             if (email) {
               // Fetch user data based on email
-              let response = await fetch(`http://localhost:4000/api/v1/users?email=${encodeURIComponent(email)}`);
+              let response = await fetch(`https://gdg-mmmut.vercel.app/api/v1/users?email=${encodeURIComponent(email)}`);
               console.log(response);
               
               if (!response.ok) {

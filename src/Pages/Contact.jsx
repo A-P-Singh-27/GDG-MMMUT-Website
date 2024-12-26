@@ -17,7 +17,7 @@ export default function Contact() {
 
   const handleSaveContactandSendMail = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/v1/contactUs", {
+      const response = await fetch("https://gdg-mmmut.vercel.app/api/v1/contactUs", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
