@@ -3,12 +3,13 @@ require("dotenv").config()
 
 exports.connect = () => {
     mongoose.connect(process.env.DATABASE_URL)
-    .then(() => {
-        console.log("Database Connection established Successfully.")
-    })
-    .catch((err) => {
-        console.error(err)
-        console.log("Connection Issues with Database");
-        process.exit(1);
-    })
+        .then(() => {
+            console.log("Database Connection established Successfully.")
+
+        })
+        .catch((err) => {
+            console.error(err)
+            console.log("Connection Issues with Database");
+            process.exit(1);
+        })
 }
