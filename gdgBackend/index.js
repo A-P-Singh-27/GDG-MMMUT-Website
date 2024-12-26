@@ -1,70 +1,32 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const database = require("./config/database");
-const dotenv = require("dotenv");
 const cors = require("cors");
-const cookieParser = require("cookie-parser");
-const fileUpload = require("express-fileupload");
+require('dotenv').config();
+const connectDB = require('./config/database').connect;
 
-// Import routes
-const userRoutes = require("./routes/User");
-const profileRoutes = require("./routes/Profile");
-const courseRoutes = require("./routes/Course");
-const paymentRoutes = require("./routes/Payments");
-const contactUsRoute = require("./routes/Contact");
+const PORT = process.env.PORT || 3000;
+// console.log('Database URL:', process.env.DATABASE_URL);  
 
-// Load environment variables
-dotenv.config();
+// Connect to the database
+connectDB();
 
-// Middleware
 app.use(express.json());
-app.use(cookieParser());
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+app.use(cors({
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST"],
     credentials: true,
-  })
-);
-app.use(
-  fileUpload({
-    useTempFiles: true,
-    tempFileDir: "/tmp/",
-  })
-);
+}));
 
-// Routes
-app.use("/api/v1/auth", userRoutes);
-app.use("/api/v1/profile", profileRoutes);
-app.use("/api/v1/course", courseRoutes);
-app.use("/api/v1/payment", paymentRoutes);
-app.use("/api/v1/reach", contactUsRoute);
+// Route import and mount
+const routers = require('./Routes/routes');
+app.use('/api/v1', routers);
 
-// Default route
-app.get("/", (req, res) => {
-  return res.json({
-    success: true,
-    message: "Your server is running...",
-  });
+// Root endpoint
+app.get('/', (req, res) => {
+    res.send('HELLO A.P Singh');
 });
 
 // Start the server
-const startServer = async () => {
-  try {
-    await database.connect();
-    
-    app.listen(process.env.PORT || 4000, () => {
-      console.log(`App is running at port ${process.env.PORT || 4000}`);
-    });
-  } catch (error) {
-    console.error("Failed to start server:", error);
-    process.exit(1);
-  }
-};
-
-startServer();
-
-// Add this for better error handling
-process.on("unhandledRejection", (error) => {
-  console.log("Unhandled Rejection:", error);
-  process.exit(1);
-}); 
+app.listen(PORT, () => {
+    console.log(`Server started at port ${PORT}`);
+});

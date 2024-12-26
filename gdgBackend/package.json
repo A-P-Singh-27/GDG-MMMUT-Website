@@ -4,7 +4,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "npm install && node server.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,8 +21,5 @@
     "nodemailer": "^6.9.16",
     "nodemon": "^3.1.9",
     "zod": "^3.24.1"
-  },
-  "engines": {
-    "node": ">=14.0.0"
   }
 }
