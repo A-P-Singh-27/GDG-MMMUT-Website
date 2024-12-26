@@ -11,11 +11,7 @@ const PORT = process.env.PORT || 3000;
 connectDB();
 
 app.use(express.json());
-app.use(cors({
-    origin: "https://gdg-mmmut.netlify.app",
-    methods: ["GET", "POST"],
-    credentials: true,
-}));
+app.use(cors());
 
 // Route import and mount
 const routers = require('./Routes/routes');
